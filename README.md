@@ -1,2 +1,4 @@
 # baitap3
-<img width="970" height="514" alt="{75779090-63D4-43A0-949F-4CF12B32B204}" src="https://github.com/user-attachments/assets/2d57ea85-1745-4269-b8aa-ef8284d8764e" />
+Hoàn thành cài đặt ubuntu và docker
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/733fdc28-995b-4fe1-bb0e-16a4c5960145" />
