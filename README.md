@@ -31,4 +31,7 @@ phpMyAdmin
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/60d27d72-cdd1-42fb-98f6-faa64ce5c9db" />
 
+Kết Quả hiển thị lên Wed
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a077c074-eb4e-4f92-a853-bba3304819c1" />
 
