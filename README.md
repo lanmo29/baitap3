@@ -22,3 +22,7 @@ Tạo API Tokens
 5 giây sẽ gửi cập nhật dữ liệu 1 lần
 
 <img width="309" height="764" alt="image" src="https://github.com/user-attachments/assets/7f20e817-ea0f-41d3-a6b3-4aa018bb97a4" />
+
+Test API có dạng như sau 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/110e8cd7-3e3b-469e-858c-4fd60f87714c" />
