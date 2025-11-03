@@ -10,3 +10,7 @@ Hoàn thành chạy trương trình lần đầu và không còn lỗi cổng
 Bắt đầu thiết lập nodered 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b2e5a46-a89d-4b21-84d9-955de60c416b" />
+
+Tạo API Tokens
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2aa1b450-dfdf-4d47-91ce-a6874fdbb01f" />
