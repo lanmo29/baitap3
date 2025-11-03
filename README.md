@@ -6,3 +6,7 @@ Hoàn thành cài đặt ubuntu và docker
 Hoàn thành chạy trương trình lần đầu và không còn lỗi cổng 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebdc6c3-ce5c-4d25-9785-50357d25974b" />
+
+Bắt đầu thiết lập nodered 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b2e5a46-a89d-4b21-84d9-955de60c416b" />
