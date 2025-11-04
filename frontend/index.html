@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>IoT Dashboard - Nguyễn Hưng Lân</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 16px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    table {
+      margin: 40px auto;
+      width: 80%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    #status {
+      text-align: center;
+      margin-top: 10px;
+      color: gray;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>Giám sát cảm biến IoT - Nguyễn Hưng Lân</header>
+
+  <table id="sensorTable">
+    <thead>
+      <tr><th>Tên cảm biến</th><th>Nhiệt độ (°C)</th><th>Độ ẩm (%)</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <p id="status">Đang tải dữ liệu...</p>
+
+  <script>
+    async function loadSensors() {
+      const status = document.getElementById('status');
+      try {
+        const res = await fetch('/api/sensors');
+        if (!res.ok) throw new Error('API lỗi');
+        const data = await res.json();
+
+        const tbody = document.querySelector('#sensorTable tbody');
+        tbody.innerHTML = '';
+        data.forEach(sensor => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${sensor.name}</td>
+            <td>${sensor.temperature.toFixed(1)}</td>
+            <td>${sensor.humidity.toFixed(1)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        status.textContent = "Cập nhật lần cuối: " + new Date().toLocaleTimeString();
+      } catch (err) {
+        status.textContent = "⚠️ Không thể tải dữ liệu từ API!";
+        console.error(err);
+      }
+    }
+
+    loadSensors();
+    setInterval(loadSensors, 5000); // Cập nhật mỗi 5 giây
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+[
+    {
+        "id": "fake_sensor_flow",
+        "type": "tab",
+        "label": "Fake IoT Sensors",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "eec1f606345fcba6",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "mariadb",
+        "port": "3306",
+        "db": "iotdb",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "d0922d23e6fc726b",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "timeout": 10,
+        "rejectUnauthorized": false
+    },
+    {
+        "id": "inject_5s",
+        "type": "inject",
+        "z": "fake_sensor_flow",
+        "name": "Auto every 5s",
+        "props": [],
+        "repeat": "5",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "func_fake_data"
+            ]
+        ]
+    },
+    {
+        "id": "func_fake_data",
+        "type": "function",
+        "z": "fake_sensor_flow",
+        "name": "Tạo dữ liệu ảo",
+        "func": "msg.payload = [\n  { name: 'Nhiệt độ', value: (25 + Math.random() * 5).toFixed(1) },\n  { name: 'Độ ẩm', value: (60 + Math.random() * 10).toFixed(1) }\n];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "split_array",
+                "6714bcd952d6a2b1"
+            ]
+        ]
+    },
+    {
+        "id": "split_array",
+        "type": "split",
+        "z": "fake_sensor_flow",
+        "name": "Tách từng giá trị",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "func_update_mysql",
+                "func_write_influx"
+            ]
+        ]
+    },
+    {
+        "id": "func_update_mysql",
+        "type": "function",
+        "z": "fake_sensor_flow",
+        "name": "Update vào MariaDB",
+        "func": "msg.topic = 'UPDATE sensors SET latest_value=? WHERE name=?';\nmsg.payload = [msg.payload.value, msg.payload.name];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 850,
+        "y": 60,
+        "wires": [
+            [
+                "mysql_out"
+            ]
+        ]
+    },
+    {
+        "id": "func_write_influx",
+        "type": "function",
+        "z": "fake_sensor_flow",
+        "name": "Ghi vào InfluxDB",
+        "func": "// Nếu msg.payload là mảng (ví dụ gồm nhiều sensor)\nlet data = [];\nif (Array.isArray(msg.payload)) {\n    msg.payload.forEach(sensor => {\n        let rawValue = sensor.value;\n        // ép chuỗi thành số, loại bỏ ký tự không phải số\n        if (typeof rawValue === \"string\") {\n            rawValue = rawValue.replace(/[^\\d.-]/g, \"\");\n        }\n        const numericValue = parseFloat(rawValue);\n\n        // chỉ ghi nếu là số hợp lệ\n        if (!isNaN(numericValue)) {\n            data.push({\n                measurement: \"sensor_data\",\n                tags: { sensor: sensor.name },\n                fields: { value: numericValue }\n            });\n        }\n    });\n} else {\n    // nếu chỉ có 1 sensor\n    let rawValue = msg.payload.value;\n    if (typeof rawValue === \"string\") {\n        rawValue = rawValue.replace(/[^\\d.-]/g, \"\");\n    }\n    const numericValue = parseFloat(rawValue);\n    if (!isNaN(numericValue)) {\n        data.push({\n            measurement: \"sensor_data\",\n            tags: { sensor: msg.payload.name },\n            fields: { value: numericValue }\n        });\n    }\n}\n\nmsg.payload = data;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 140,
+        "wires": [
+            [
+                "influx_out"
+            ]
+        ]
+    },
+    {
+        "id": "http_in_api",
+        "type": "http in",
+        "z": "fake_sensor_flow",
+        "name": "API /api/sensors",
+        "url": "/api/sensors",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "func_select_mysql"
+            ]
+        ]
+    },
+    {
+        "id": "func_select_mysql",
+        "type": "function",
+        "z": "fake_sensor_flow",
+        "name": "Truy vấn MariaDB",
+        "func": "msg.topic = 'SELECT name, latest_value FROM sensors';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "mysql_out_api"
+            ]
+        ]
+    },
+    {
+        "id": "http_response",
+        "type": "http response",
+        "z": "fake_sensor_flow",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1070,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "mysql_out_api",
+        "type": "mysql",
+        "z": "fake_sensor_flow",
+        "mydb": "eec1f606345fcba6",
+        "name": "Lấy dữ liệu sensors",
+        "x": 670,
+        "y": 240,
+        "wires": [
+            [
+                "http_response"
+            ]
+        ]
+    },
+    {
+        "id": "mysql_out",
+        "type": "mysql",
+        "z": "fake_sensor_flow",
+        "mydb": "eec1f606345fcba6",
+        "name": "Cập nhật sensors",
+        "x": 1090,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "influx_out",
+        "type": "influxdb out",
+        "z": "fake_sensor_flow",
+        "influxdb": "d0922d23e6fc726b",
+        "name": "Ghi sensor_data",
+        "measurement": "sensor_data",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iot-org",
+        "bucket": "iot_data_v2",
+        "x": 1100,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6714bcd952d6a2b1",
+        "type": "debug",
+        "z": "fake_sensor_flow",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 160,
+        "wires": []
+    }
+]

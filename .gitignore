@@ -1,0 +1,17 @@
+# Bỏ dữ liệu Docker volumes
+mariadb_data/
+influxdb_data/
+grafana_data/
+nodered_data/
+
+# Bỏ dữ liệu build
+node_modules/
+*.log
+
+# Bỏ file tạm, cache
+*.tmp
+*.swp
+*.bak
+
+# Bỏ file cấu hình nhạy cảm
+flows_cred.json
