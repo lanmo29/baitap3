@@ -39,7 +39,7 @@ Kết Quả hiển thị lên Wed
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a077c074-eb4e-4f92-a853-bba3304819c1" />
 
-Cập nhật nodered mới 
+Cập nhật cấu hình nodered mới hoàn thiện và tối ưu hơn
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/343439e0-1298-4220-95d6-64a191851936" />
 
