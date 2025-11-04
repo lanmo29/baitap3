@@ -17,7 +17,7 @@ Tạo API Tokens
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2aa1b450-dfdf-4d47-91ce-a6874fdbb01f" />
 
-Đã hoàn thiện node-red 
+Đã hoàn thiện cấu hình node-red 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8984b05-a8fb-4bb8-a4d6-2763fb74a23e" />
 
