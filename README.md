@@ -33,6 +33,6 @@ phpMyAdmin
 
 Kết Quả hiển thị lên Wed
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a077c074-eb4e-4f92-a853-bba3304819c1" />
-
 5s sẽ cập nhật dữ liệu một lần
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a077c074-eb4e-4f92-a853-bba3304819c1" />
