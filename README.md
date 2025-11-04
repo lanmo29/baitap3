@@ -40,3 +40,7 @@ Kết Quả hiển thị lên Wed
 Cập nhật nodered mới 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/343439e0-1298-4220-95d6-64a191851936" />
+
+Truy vấn dữ liệu trên InfluxDB UI
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/749e9f56-ff1c-48d6-8dfa-bfef9e6cce04" />
