@@ -47,23 +47,13 @@ Truy vấn dữ liệu trên InfluxDB UI
 
 Kết Luận : 
 
-Dự án này mô phỏng một hệ thống IoT giám sát dữ liệu cảm biến sử dụng Node-RED, MariaDB, InfluxDB và Grafana.
-Hệ thống hoạt động theo cơ chế như sau:
+Qua quá trình thực hiện dự án này, em đã có cơ hội áp dụng và hiểu sâu hơn về cách xây dựng một hệ thống IoT và lập trình Wed giám sát dữ liệu cảm biến, sử dụng Node-RED làm trung tâm, kết hợp MariaDB, InfluxDB và Grafana. Ban đầu, em gặp không ít khó khăn trong việc cài đặt môi trường Linux qua WSL, cấu hình Docker Compose để chạy các container, và debug lỗi kết nối database như "permission denied" hay "port allocated". Qua việc tra cứu tài liệu,AI ( ChatGPT, GrokAI và thử nghiệm, em đã học được cách quản lý quyền file trên Linux, sử dụng sudo để xóa volume Docker, và cấu hình network đúng cách để tránh conflict.
+Hệ thống hoạt động như một mô hình IoT hoàn chỉnh: Node-RED đóng vai trò gateway, thu thập dữ liệu từ cảm biến (hoặc API online để simulate realtime data như nhiệt độ, độ ẩm). Em hiểu rằng Node-RED rất mạnh ở tính trực quan với flow kéo thả, giúp xử lý dữ liệu dễ dàng – ví dụ, dùng node Function để tiền xử lý, node MariaDB để update giá trị mới nhất vào cơ sở dữ liệu quan hệ (dùng phpMyAdmin để tạo table và quản trị ban đầu), và node InfluxDB để insert lịch sử time-series. InfluxDB nổi bật ở khả năng lưu dữ liệu thời gian, giúp Grafana dễ dàng kết nối và vẽ biểu đồ. Grafana mang lại giá trị lớn ở visualization, với dashboard tùy chỉnh để theo dõi xu hướng, em nhận ra tầm quan trọng của monitoring trong IoT.
+Tổng thể, dự án giúp em nắm rõ flow: Thu thập dữ liệu → Lưu trữ (realtime vs historical) → Phân tích và hiển thị. Em học được rằng trong thực tế, cần chú ý quyền access, port management, và scalability (như dùng Docker để deploy nhanh). Bài tập này không chỉ củng cố kỹ năng mà còn giúp tôi thấy rõ lợi ích của open-source tool trong IoT. 
+Trong quá trình thực hiện bài tập, em gặp nhiều khó khăn, đặc biệt là ở giai đoạn kết nối và tích hợp các thành phần.
+Ban đầu, việc cấu hình Node-RED giao tiếp với MariaDB và InfluxDB gặp lỗi về định dạng dữ liệu (NaN, payload không hợp lệ),
+và việc hiển thị dữ liệu trên Grafana cũng bị ảnh hưởng bởi sai sót trong truy vấn Flux.
+Thiết lập môi trường Docker và cấp quyền truy cập giữa các container cũng tốn khá nhiều thời gian để khắc phục.
+Tuy nhiên, qua quá trình tìm hiểu, thử nghiệm và sửa lỗi, mình đã hiểu rõ hơn về cách hoạt động của từng thành phần trong hệ thống IoT này,
+đặc biệt là luồng dữ liệu từ cảm biến → Node-RED → cơ sở dữ liệu → Grafana.
 
-Node-RED đóng vai trò là trung tâm xử lý dữ liệu (IoT Gateway).
-Nó đọc dữ liệu từ các cảm biến thực tế (hoặc từ các API dữ liệu thời gian thực online), sau đó xử lý và phân luồng dữ liệu đến các hệ thống lưu trữ khác nhau.
-
-Dữ liệu mới nhất (realtime) được cập nhật (UPDATE) vào MariaDB.
-Cơ sở dữ liệu này dùng để lưu giá trị hiện tại của các cảm biến, giúp hiển thị nhanh tình trạng tức thời trên web.
-Việc quản trị và tạo bảng ban đầu được thực hiện qua phpMyAdmin.
-
-Dữ liệu lịch sử (time-series) được ghi (INSERT) vào InfluxDB.
-Đây là nơi lưu toàn bộ chuỗi thời gian đo được (temperature, humidity, v.v.),
-giúp hệ thống có thể truy xuất lại các biến động theo thời gian.
-
-Grafana kết nối trực tiếp tới InfluxDB để hiển thị biểu đồ trực quan (dashboard).
-Nhờ đó, người dùng có thể dễ dàng theo dõi, phân tích xu hướng và đánh giá trạng thái hệ thống cảm biến theo thời gian thực.
-
-Tóm lại, dự án thể hiện một kiến trúc IoT hoàn chỉnh:
-
-Thu thập dữ liệu → Xử lý & lưu trữ → Phân tích & hiển thị trực quan.
