@@ -44,3 +44,26 @@ Cập nhật nodered mới
 Truy vấn dữ liệu trên InfluxDB UI
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/749e9f56-ff1c-48d6-8dfa-bfef9e6cce04" />
+
+Kết Luận : 
+
+Dự án này mô phỏng một hệ thống IoT giám sát dữ liệu cảm biến sử dụng Node-RED, MariaDB, InfluxDB và Grafana.
+Hệ thống hoạt động theo cơ chế như sau:
+
+Node-RED đóng vai trò là trung tâm xử lý dữ liệu (IoT Gateway).
+Nó đọc dữ liệu từ các cảm biến thực tế (hoặc từ các API dữ liệu thời gian thực online), sau đó xử lý và phân luồng dữ liệu đến các hệ thống lưu trữ khác nhau.
+
+Dữ liệu mới nhất (realtime) được cập nhật (UPDATE) vào MariaDB.
+Cơ sở dữ liệu này dùng để lưu giá trị hiện tại của các cảm biến, giúp hiển thị nhanh tình trạng tức thời trên web.
+Việc quản trị và tạo bảng ban đầu được thực hiện qua phpMyAdmin.
+
+Dữ liệu lịch sử (time-series) được ghi (INSERT) vào InfluxDB.
+Đây là nơi lưu toàn bộ chuỗi thời gian đo được (temperature, humidity, v.v.),
+giúp hệ thống có thể truy xuất lại các biến động theo thời gian.
+
+Grafana kết nối trực tiếp tới InfluxDB để hiển thị biểu đồ trực quan (dashboard).
+Nhờ đó, người dùng có thể dễ dàng theo dõi, phân tích xu hướng và đánh giá trạng thái hệ thống cảm biến theo thời gian thực.
+
+Tóm lại, dự án thể hiện một kiến trúc IoT hoàn chỉnh:
+
+Thu thập dữ liệu → Xử lý & lưu trữ → Phân tích & hiển thị trực quan.
