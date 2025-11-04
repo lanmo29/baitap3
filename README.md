@@ -1,4 +1,7 @@
 # baitap3
+# Nguyễn Hùng Lân 
+# k215480106030 
+
 Hoàn thành cài đặt ubuntu và docker
 
 em sử dụng phương án enable wsl: cài đặt ubuntu
