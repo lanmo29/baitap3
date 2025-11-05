@@ -22,8 +22,8 @@ Sử dụng **phương án enable WSL** để cài đặt **Ubuntu** và **Docke
 
 ---
 
-### 2️⃣ Cài đặt và chạy Docker  
-Hoàn thành cài đặt Docker, chạy chương trình lần đầu **không còn lỗi cổng**.  
+### 2️⃣ Cài đặt và chạy các thành phần **Node-RED**, **MariaDB (quản lý qua phpMyAdmin)**, **InfluxDB**, **Grafana**,  
+Hoàn thành cài đặt, chạy chương trình lần đầu **không còn lỗi cổng**.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebdc6c3-ce5c-4d25-9785-50357d25974b" />
 
