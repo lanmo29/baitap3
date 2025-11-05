@@ -86,6 +86,7 @@ Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống.
 ---
 
 ### 8️⃣ Truy vấn dữ liệu trên InfluxDB UI  
+(InfluxDB và Grafana tồn đọng quá nhiều lỗi-> em chưa thể hoàn thiện được) 
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/749e9f56-ff1c-48d6-8dfa-bfef9e6cce04" />
 </p>
@@ -127,4 +128,4 @@ Tuy nhiên, qua việc **thử nghiệm – sửa lỗi – tìm hiểu**, em đ
 
 ---
 
-📌 *Bài tập này giúp em rèn luyện kỹ năng thực hành, hiểu rõ quy trình tích hợp hệ thống và tầm quan trọng của việc quản lý môi trường phát triển với Docker, bài tập của em còn rất nhiều lỗi mà e chưa hoàn thiện được em sẽ cố gắng tìm hiểu và fix lỗi để hoàn thiện bài một cách triệt để và hoàn hảo hơn em cảm ơn thầy đã xem và nhận sét bài tập về nhà lần này của em.*
+📌 *Bài tập này giúp em rèn luyện kỹ năng thực hành, hiểu rõ quy trình tích hợp hệ thống và tầm quan trọng của việc quản lý môi trường phát triển với Docker, bài tập của em còn rất nhiều lỗi mà e chưa hoàn thiện được đặc biệt là **InfluxDB** và **Grafana**, em sẽ cố gắng tìm hiểu và fix lỗi để hoàn thiện bài một cách triệt để và hoàn hảo hơn em cảm ơn thầy đã xem và nhận sét bài tập về nhà lần này của em.*
