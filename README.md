@@ -65,35 +65,65 @@ API hoạt động ổn định.
 Truy cập và quản trị cơ sở dữ liệu.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/60d27d72-cdd1-42fb-98f6-faa64ce5c9db" />
+</p>
 
-Kết Quả hiển thị lên Wed
+---
 
-5s sẽ cập nhật dữ liệu một lần
-
+### 6️⃣ Giao diện Web hiển thị dữ liệu  
+Dữ liệu **tự động cập nhật 5 giây/lần**.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a077c074-eb4e-4f92-a853-bba3304819c1" />
+</p>
 
-Cập nhật cấu hình nodered mới hoàn thiện và tối ưu hơn
+---
 
+### 7️⃣ Cấu hình Node-RED tối ưu mới  
+Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/343439e0-1298-4220-95d6-64a191851936" />
+</p>
 
-Truy vấn dữ liệu trên InfluxDB UI
+---
 
+### 8️⃣ Truy vấn dữ liệu trên InfluxDB UI  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/749e9f56-ff1c-48d6-8dfa-bfef9e6cce04" />
+</p>
 
-Kết Luận : 
+---
 
-Qua quá trình thực hiện dự án này, em đã có cơ hội áp dụng và hiểu sâu hơn về cách xây dựng một hệ thống IoT và lập trình Wed giám sát dữ liệu cảm biến, sử dụng Node-RED làm trung tâm, kết hợp MariaDB, InfluxDB và Grafana. 
+## 🧠 Kết luận  
 
-Ban đầu, em gặp không ít khó khăn trong việc cài đặt môi trường Linux qua WSL, cấu hình Docker Compose để chạy các container, và debug lỗi kết nối database như "permission denied" hay "port allocated". Qua việc tra cứu tài liệu,AI ( ChatGPT, GrokAI và thử nghiệm, em đã học được cách quản lý quyền file trên Linux, sử dụng sudo để xóa volume Docker, và cấu hình network đúng cách để tránh conflict.
+Qua quá trình thực hiện dự án này, em đã có cơ hội **hiểu sâu hơn về cách xây dựng một hệ thống IoT** và **lập trình web giám sát dữ liệu cảm biến**, sử dụng **Node-RED** làm trung tâm, kết hợp **MariaDB**, **InfluxDB** và **Grafana**.
 
-Hệ thống hoạt động như một mô hình IoT hoàn chỉnh: Node-RED đóng vai trò gateway, thu thập dữ liệu từ cảm biến (hoặc API online để simulate realtime data như nhiệt độ, độ ẩm). Em hiểu rằng Node-RED rất mạnh ở tính trực quan với flow kéo thả, giúp xử lý dữ liệu dễ dàng – ví dụ, dùng node Function để tiền xử lý, node MariaDB để update giá trị mới nhất vào cơ sở dữ liệu quan hệ (dùng phpMyAdmin để tạo table và quản trị ban đầu), và node InfluxDB để insert lịch sử time-series. InfluxDB nổi bật ở khả năng lưu dữ liệu thời gian, giúp Grafana dễ dàng kết nối và vẽ biểu đồ. Grafana mang lại giá trị lớn ở visualization, với dashboard tùy chỉnh để theo dõi xu hướng, em nhận ra tầm quan trọng của monitoring trong IoT.
+Ban đầu, em gặp nhiều khó khăn trong việc cài đặt môi trường Linux qua WSL, cấu hình Docker Compose để chạy các container, và xử lý lỗi kết nối database như *permission denied* hay *port allocated*.  
+Nhờ việc tra cứu tài liệu, sử dụng **AI (ChatGPT, GrokAI)** và thử nghiệm thực tế, em đã học được cách:  
+- Quản lý quyền truy cập file trên Linux  
+- Xóa volume Docker bằng `sudo`  
+- Cấu hình network đúng cách để tránh xung đột  
 
-Tổng thể, dự án giúp em nắm rõ flow: Thu thập dữ liệu → Lưu trữ (realtime vs historical) → Phân tích và hiển thị. Em học được rằng trong thực tế, cần chú ý quyền access, port management, và scalability (như dùng Docker để deploy nhanh). Bài tập này không chỉ củng cố kỹ năng mà còn giúp tôi thấy rõ lợi ích của open-source tool trong IoT. 
+Hệ thống hoạt động như một **mô hình IoT hoàn chỉnh**:  
+- **Node-RED**: Thu thập dữ liệu từ cảm biến (hoặc API online)  
+- **MariaDB**: Lưu dữ liệu quan hệ, quản lý bằng phpMyAdmin  
+- **InfluxDB**: Lưu dữ liệu thời gian thực (time-series)  
+- **Grafana**: Trực quan hóa dữ liệu qua dashboard  
 
-Trong quá trình thực hiện bài tập, em gặp nhiều khó khăn, đặc biệt là ở giai đoạn kết nối và tích hợp các thành phần.
-Ban đầu, việc cấu hình Node-RED giao tiếp với MariaDB và InfluxDB gặp lỗi về định dạng dữ liệu (NaN, payload không hợp lệ),
-và việc hiển thị dữ liệu trên Grafana cũng bị ảnh hưởng bởi sai sót trong truy vấn Flux.
-Thiết lập môi trường Docker và cấp quyền truy cập giữa các container cũng tốn khá nhiều thời gian để khắc phục.
-Tuy nhiên, qua quá trình tìm hiểu, thử nghiệm và sửa lỗi, mình đã hiểu rõ hơn về cách hoạt động của từng thành phần trong hệ thống IoT này,
-đặc biệt là luồng dữ liệu từ cảm biến → Node-RED → cơ sở dữ liệu → Grafana.
+Em nhận thấy tầm quan trọng của **monitoring** và **flow dữ liệu** trong IoT:  
+> Thu thập dữ liệu → Lưu trữ (Realtime & Historical) → Phân tích → Hiển thị trực quan  
 
+Dự án giúp em củng cố kỹ năng kỹ thuật, hiểu rõ hơn về **Docker**, **cơ sở dữ liệu**, và **các công cụ mã nguồn mở** phục vụ triển khai hệ thống IoT.
+
+---
+
+## ⚡ Khó khăn gặp phải  
+Trong quá trình thực hiện:  
+- Lỗi định dạng dữ liệu (NaN, payload không hợp lệ) khi kết nối Node-RED với MariaDB/InfluxDB.  
+- Sai cú pháp truy vấn Flux trong Grafana.  
+- Mất nhiều thời gian để cấu hình Docker và cấp quyền giữa các container.  
+
+Tuy nhiên, qua việc **thử nghiệm – sửa lỗi – tìm hiểu**, em đã hiểu rõ hơn về **cách dữ liệu luân chuyển** trong hệ thống:  
+**Cảm biến → Node-RED → CSDL → Grafana**.
+
+---
+
+📌 *Bài tập này giúp em rèn luyện kỹ năng thực hành, hiểu rõ quy trình tích hợp hệ thống và tầm quan trọng của việc quản lý môi trường phát triển với Docker.*
