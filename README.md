@@ -26,9 +26,13 @@ Sử dụng **phương án enable WSL** để cài đặt **Ubuntu** và **Docke
 Hoàn thành cài đặt, chạy chương trình lần đầu **không còn lỗi cổng**.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebdc6c3-ce5c-4d25-9785-50357d25974b" />
+</p>
 
-Bắt đầu thiết lập nodered 
+---
 
+### 3️⃣ Thiết lập Node-RED  
+Bắt đầu cấu hình Node-RED.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b2e5a46-a89d-4b21-84d9-955de60c416b" />
 
 Tạo API Tokens
