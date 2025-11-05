@@ -86,7 +86,12 @@ Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống.
 ---
 
 ### 8️⃣ Truy vấn dữ liệu trên InfluxDB UI  
-(InfluxDB và Grafana tồn đọng quá nhiều lỗi như (chưa đúng format đữ liệu nên grafana chưa để thể đọc và vẽ biểu đồ mặc dù dữ liệu từ nodered đã đúng định dạng) nên em chưa thể hoàn thiện được) 
+(InfluxDB và Grafana tồn đọng quá nhiều lỗi như (chưa đúng format đữ liệu nên grafana chưa để thể đọc và vẽ biểu đồ mặc dù dữ liệu từ nodered đã đúng định dạng) nên em chưa thể hoàn thiện được)
+Định dạng dữ liệu từ cảm biến (được mô phỏng bởi nodered) có dạng như sau : 
+{
+  "temperature": 28.6,
+  "humidity": 65.3
+}
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/749e9f56-ff1c-48d6-8dfa-bfef9e6cce04" />
 </p>
