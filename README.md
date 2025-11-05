@@ -15,7 +15,7 @@ Hoàn thành cài đặt **Ubuntu** và **Docker**, triển khai hệ thống **
 ## ⚙️ Quá trình thực hiện  
 
 ### 1️⃣ Cài đặt môi trường  
-Sử dụng **phương án enable WSL** để cài đặt **Ubuntu**.  
+Sử dụng **phương án enable WSL** để cài đặt **Ubuntu** và **Docker**.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/733fdc28-995b-4fe1-bb0e-16a4c5960145" />
 </p>
