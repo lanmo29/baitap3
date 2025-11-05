@@ -119,11 +119,12 @@ Dự án giúp em củng cố kỹ năng kỹ thuật, hiểu rõ hơn về **Do
 Trong quá trình thực hiện:  
 - Lỗi định dạng dữ liệu (NaN, payload không hợp lệ) khi kết nối Node-RED với MariaDB/InfluxDB.  
 - Sai cú pháp truy vấn Flux trong Grafana.  
-- Mất nhiều thời gian để cấu hình Docker và cấp quyền giữa các container.  
+- Mất nhiều thời gian để cấu hình Docker và cấp quyền giữa các container.
+- Và còn rất nhiều lỗi khác nữa ......  
 
 Tuy nhiên, qua việc **thử nghiệm – sửa lỗi – tìm hiểu**, em đã hiểu rõ hơn về **cách dữ liệu luân chuyển** trong hệ thống:  
-**Cảm biến → Node-RED → CSDL → Grafana**.
+**Cảm biến (mô phỏng bằng nodered) → Node-RED → CSDL → Grafana**.
 
 ---
 
-📌 *Bài tập này giúp em rèn luyện kỹ năng thực hành, hiểu rõ quy trình tích hợp hệ thống và tầm quan trọng của việc quản lý môi trường phát triển với Docker.*
+📌 *Bài tập này giúp em rèn luyện kỹ năng thực hành, hiểu rõ quy trình tích hợp hệ thống và tầm quan trọng của việc quản lý môi trường phát triển với Docker, bài tập của em còn rất nhiều lỗi mà e chưa hoàn thiện được em sẽ cố gắng tìm hiểu và fix lỗi để hoàn thiện bài một cách triệt để và hoàn hảo hơn em cảm ơn thầy đã xem và nhận sét bài tập về nhà lần này của em.*
