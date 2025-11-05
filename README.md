@@ -78,7 +78,7 @@ Dữ liệu **tự động cập nhật 5 giây/lần**.
 ---
 
 ### 7️⃣ Cấu hình Node-RED tối ưu mới  
-Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống.  
+Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống vì bắt đầu xuất hiện lỗi nên thêm một số node và sửa một chút cấu hình.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/343439e0-1298-4220-95d6-64a191851936" />
 </p>
