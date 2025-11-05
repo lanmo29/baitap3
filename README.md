@@ -16,11 +16,15 @@ Hoàn thành cài đặt **Ubuntu** và **Docker**, triển khai hệ thống **
 
 ### 1️⃣ Cài đặt môi trường  
 Sử dụng **phương án enable WSL** để cài đặt **Ubuntu**.  
-
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/733fdc28-995b-4fe1-bb0e-16a4c5960145" />
+</p>
 
-Hoàn thành chạy trương trình lần đầu và không còn lỗi cổng 
+---
 
+### 2️⃣ Cài đặt và chạy Docker  
+Hoàn thành cài đặt Docker, chạy chương trình lần đầu **không còn lỗi cổng**.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebdc6c3-ce5c-4d25-9785-50357d25974b" />
 
 Bắt đầu thiết lập nodered 
