@@ -44,17 +44,26 @@ Tạo **API Tokens**.
 Hoàn thiện cấu hình Node-RED.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8984b05-a8fb-4bb8-a4d6-2763fb74a23e" />
+</p>
 
-5 giây sẽ gửi cập nhật dữ liệu 1 lần
-
+Hệ thống gửi **cập nhật dữ liệu mỗi 5 giây**.  
+<p align="center">
 <img width="309" height="764" alt="image" src="https://github.com/user-attachments/assets/7f20e817-ea0f-41d3-a6b3-4aa018bb97a4" />
+</p>
 
-Test API có dạng như sau 
+---
 
+### 4️⃣ Kiểm tra API  
+API hoạt động ổn định.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/110e8cd7-3e3b-469e-858c-4fd60f87714c" />
+</p>
 
-phpMyAdmin
+---
 
+### 5️⃣ Cấu hình phpMyAdmin  
+Truy cập và quản trị cơ sở dữ liệu.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/60d27d72-cdd1-42fb-98f6-faa64ce5c9db" />
 
 Kết Quả hiển thị lên Wed
