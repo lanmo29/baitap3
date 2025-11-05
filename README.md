@@ -34,13 +34,15 @@ Hoàn thành cài đặt, chạy chương trình lần đầu **không còn lỗ
 Bắt đầu cấu hình Node-RED.  
 <p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b2e5a46-a89d-4b21-84d9-955de60c416b" />
+</p>
 
-Tạo API Tokens
-
+Tạo **API Tokens**.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2aa1b450-dfdf-4d47-91ce-a6874fdbb01f" />
+</p>
 
-Đã hoàn thiện cấu hình node-red 
-
+Hoàn thiện cấu hình Node-RED.  
+<p align="center">
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8984b05-a8fb-4bb8-a4d6-2763fb74a23e" />
 
 5 giây sẽ gửi cập nhật dữ liệu 1 lần
