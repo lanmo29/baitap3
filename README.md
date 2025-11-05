@@ -1,10 +1,21 @@
-# baitap3
-# Nguyễn Hùng Lân 
-# k215480106030 
+# 🧩 BÀI TẬP 3  
+**Nguyễn Hùng Lân – K215480106030**
 
-Hoàn thành cài đặt ubuntu và docker
+---
 
-em sử dụng phương án enable wsl: cài đặt ubuntu
+## 🎯 Mục tiêu  
+Hoàn thành cài đặt **Ubuntu** và **Docker**, triển khai hệ thống **IoT giám sát dữ liệu cảm biến** với các thành phần:  
+- Node-RED  
+- MariaDB (quản lý qua phpMyAdmin)  
+- InfluxDB  
+- Grafana  
+
+---
+
+## ⚙️ Quá trình thực hiện  
+
+### 1️⃣ Cài đặt môi trường  
+Sử dụng **phương án enable WSL** để cài đặt **Ubuntu**.  
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/733fdc28-995b-4fe1-bb0e-16a4c5960145" />
 
