@@ -87,6 +87,7 @@ Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống vì bắt đầu 
 
 ### 8️⃣ Truy vấn dữ liệu trên InfluxDB UI  
 InfluxDB và Grafana tồn đọng quá nhiều lỗi như (chưa đúng format đữ liệu nên grafana chưa để thể đọc và vẽ biểu đồ mặc dù dữ liệu từ nodered đã đúng định dạng) nên em chưa thể hoàn thiện được
+
 Định dạng dữ liệu từ cảm biến (được mô phỏng bởi nodered) có dạng như sau: 
 
 {
