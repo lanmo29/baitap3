@@ -86,7 +86,7 @@ Hoàn thiện phiên bản **tối ưu hơn** cho hệ thống vì bắt đầu 
 ---
 
 ### 8️⃣ Truy vấn dữ liệu trên InfluxDB UI  
-InfluxDB và Grafana tồn đọng quá nhiều lỗi như (chưa đúng format đữ liệu nên grafana chưa để thể đọc và vẽ biểu đồ mặc dù dữ liệu từ nodered đã đúng định dạng) nên em chưa thể hoàn thiện được em nghi vấn là do lỗi cấu hình từ node Ghi vào influxDB nhưng em chưa tìm đc hướng fix em đã sửa đi sửa lại khá nhiều lần dẫn đến lỗi chồng lỗi và phải làm lại từ đầu dự án khá nhiều lần và đây là dự án có thể nói là ổn định trong các lần làm từ lúc được giao dự án đến thời điểm bây giờ
+InfluxDB và Grafana tồn đọng quá nhiều lỗi như (chưa đúng format đữ liệu nên grafana chưa để thể đọc và vẽ biểu đồ mặc dù dữ liệu từ nodered đã đúng định dạng) nên em chưa thể hoàn thiện được em nghi vấn là do lỗi cấu hình từ node Ghi vào influxDB nhưng em chưa tìm đc hướng fix em đã sửa đi sửa lại khá nhiều lần dẫn đến lỗi chồng lỗi và phải làm lại từ đầu dự án khá nhiều lần và đây là dự án có thể nói là ổn định trong các lần làm từ lúc được giao dự án đến thời điểm bây giờ.
 
 Định dạng dữ liệu từ cảm biến (được mô phỏng bởi nodered) có dạng như sau: 
 
