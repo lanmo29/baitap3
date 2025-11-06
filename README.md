@@ -101,6 +101,9 @@ trong đó gồm có temperature: Nhiệt độ và humidity: Độ ẩm
 
 ---
 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/075b1469-362f-426c-98d6-8f673760b5b5" />
+
 ## 🧠 Kết luận  
 
 Qua quá trình thực hiện dự án này, em đã có cơ hội **hiểu sâu hơn về cách xây dựng một hệ thống IoT** và **lập trình web giám sát dữ liệu cảm biến**, sử dụng **Node-RED** làm trung tâm, kết hợp **MariaDB**, **InfluxDB** và **Grafana**.
