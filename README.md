@@ -101,6 +101,7 @@ trong đó gồm có temperature: Nhiệt độ và humidity: Độ ẩm
 
 ---
 
+9️⃣ Trực quan hóa dữ liệu bằng Grafana
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/075b1469-362f-426c-98d6-8f673760b5b5" />
 
